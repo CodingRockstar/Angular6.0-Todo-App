@@ -21,14 +21,6 @@ export class TodoListComponent {
     }
 
 
-    // delete items
-    deleteTodo(key) {
-        if (window.confirm('Are sure you want to delete this ToDo?')) {
-            this._service.deleteTodo(key);
-        }
-    }
-
-
     // delete complete list
     deleteList() {
         if (window.confirm('Are sure you want to delete the whole list?')) {

@@ -8,15 +8,18 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoListitemComponent } from './todo-listitem/todo-listitem.component';
 import { TodoService } from './todo.service';
 
 import { environment } from './../environments/environment';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoAddComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoListitemComponent
   ],
   imports: [
     BrowserModule,

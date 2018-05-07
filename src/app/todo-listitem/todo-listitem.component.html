@@ -1,0 +1,24 @@
+<li class="list-group-item">
+    <span *ngIf="!isInEditMode" class="badge"><a href="#" style="color: white; font-weight: bold;" (click)="deleteTodo(todo.key)">Löschen</a></span>
+    <span *ngIf="!isInEditMode" (click)="isInEditMode = !isInEditMode">{{ todo.title }} ({{ todo.urgency }})</span>
+
+    <form *ngIf="isInEditMode" class="form-inline">
+        <div class="form-group">
+            <label for="inputTodo"></label>
+            <input type="text" [(ngModel)]="todo.title" name="title" class="form-control" id="inputTodo">
+        </div>
+
+        <div class="form-group">
+            <label for="selectPrio"></label>
+            <select id="selectPrio" [(ngModel)]="todo.urgency" name="urgency" class="form-control">
+                <option value="gering">gering</option>
+                <option value="normal">normal</option>
+                <option value="hoch">hoch</option>
+            </select>
+        </div>
+
+        &nbsp;
+        <button type="submit" (click)="updateTodo()" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>&nbsp;
+        <button type="submit" (click)="isInEditMode = !isInEditMode" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    </form>
+</li>

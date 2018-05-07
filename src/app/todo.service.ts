@@ -35,6 +35,12 @@ export class TodoService {
     }
 
 
+    // update Todo
+    updateTodo(todo: Todo) {
+        this.todosRef.update(todo.key, { title: todo.title, urgency: todo.urgency });
+    }
+
+
     // delete one item
     deleteTodo(key) {
         this.todosRef.remove(key);

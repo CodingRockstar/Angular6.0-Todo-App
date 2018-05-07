@@ -6,10 +6,7 @@
 
         <p *ngIf="todos.length == 0" class="text-center alert alert-warning">Keine Aufgaben gefunden!</p>
         <ul class="list-group list-todos">
-            <li *ngFor="let todo of todos; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }" class="list-group-item">
-                <span class="badge"><a href="#" style="color: white; font-weight: bold;" (click)="deleteTodo(todo.key)">Löschen</a></span>
-                {{ todo.title }} ({{ todo.urgency }})
-            </li>
+            <todo-listitem *ngFor="let todo of todos" [todo]="todo"></todo-listitem>
         </ul>
 
     </div>

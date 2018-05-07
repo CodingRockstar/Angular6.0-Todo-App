@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Meine ToDo's</h3>
+    </div>
+    <div class="panel-body">
+
+        <p *ngIf="todos.length == 0" class="text-center alert alert-warning">Keine Aufgaben gefunden!</p>
+        <ul class="list-group list-todos">
+            <li *ngFor="let todo of todos; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }" class="list-group-item">
+                <span class="badge"><a href="#" style="color: white; font-weight: bold;" (click)="deleteTodo(todo.key)">Löschen</a></span>
+                {{ todo.title }} ({{ todo.urgency }})
+            </li>
+        </ul>
+
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <button class="btn btn-danger" (click)="deleteList()">Liste löschen</button>
+            </div>
+        </div>
+    </div>
+</div>

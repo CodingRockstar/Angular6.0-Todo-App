@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ToDo hinzufügen</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-group">
+            <label for="inputTodo">ToDo</label>
+            <input [(ngModel)]="todo.title" type="text" class="form-control" id="inputTodo" placeholder="Neue Aufgabe">
+        </div>
+        <div class="form-group">
+            <label for="selectPrio">Priorität</label>
+            <select [(ngModel)]="todo.urgency" id="selectPrio" class="form-control">
+                <option value="gering">gering</option>
+                <option value="normal">normal</option>
+                <option value="hoch">hoch</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="panel-footer">
+        <button (click)="onAddButtonClick()" type="submit" class="btn btn-primary">ToDo speichern</button>
+    </div>
+</div>
